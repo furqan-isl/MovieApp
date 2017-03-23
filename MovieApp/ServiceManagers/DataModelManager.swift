@@ -17,6 +17,27 @@ class DataModelManager: NSObject {
         super.init()
         //Initialization
     }
+    
+    var suggestionsList: [String]!
+    
+    func loadModelData() {
+        
+        if let suggestions = UserDefaults.standard.object(forKey: Constants.UserDefaults.SUGGESTIONS_KEY) as? [String] {
+            suggestionsList = suggestions
+        } else {
+            suggestionsList = [String]()
+        }
+        
+//        let suggestions = UserDefaults.standard.stringArray(forKey: Constants.UserDefaults.SUGGESTIONS_KEY)
+////        let suggestions = UserDefaults.standard.value(forKey: Constants.UserDefaults.SUGGESTIONS_KEY)
+//        if suggestions != nil  {
+//            if (suggestions?.count)! > 0 {
+//                suggestionsList = Array(suggestions!)
+//            }
+//        }
+    }
+    
+    
 
 
 }

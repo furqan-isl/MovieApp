@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 
 enum DisplayMode: Int {
@@ -19,22 +20,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableviewMovies: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     
-    
+    var currentDisplayMode = DisplayMode.suggestions
     var moviesList = [Movie]()
-    
     var isDataUpdateRequire = true
     
     //MARK:- Private Methods
     
     func updateResults() {
-        refreshControl.endRefreshing()
+        if searchBar.text != "" {
+            updateMoviesList(queryStr: searchBar.text!)
+        }
     }
     
-    
     func updateMoviesList(queryStr: String) {
+        currentDisplayMode = .searchResults
         
         WebserviceManager.shared.getMoviesList(query: queryStr) { [weak self] (responseTuple: ResponseTuple) in
             
+            self?.refreshControl.endRefreshing()
             if responseTuple.success == true {
                 //Success
                 print("successfully get usate data")
@@ -48,14 +51,51 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                             self?.moviesList.append(movie)
                         }
                         
+                        
                         DispatchQueue.main.async {
                             self?.tableviewMovies.reloadData()
                         }
+                        
+                        //Suggestion update
+                        if DataModelManager.shared.suggestionsList.count > 0 {
+                            var isAlreadyFound = false
+                            for str in DataModelManager.shared.suggestionsList {
+                                if queryStr == str {
+                                    isAlreadyFound = true
+                                }
+                            }
+                            
+                            if isAlreadyFound == false {
+                                DataModelManager.shared.suggestionsList.append(queryStr)
+                            }
+                        }
+                        else {
+                            DataModelManager.shared.suggestionsList.append(queryStr)
+                        }
+
+                    }
+                    else {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "", message: "no result is found!")
+                        }
                     }
                 }
-                
+            }
+            else {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "", message: responseTuple.message)
+                }
             }
         }
+    }
+    
+    
+    func showAlert(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -70,21 +110,51 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     //Pull to refresh - update data
     var refreshControl: UIRefreshControl!
     
-    var currentDisplayMode = DisplayMode.searchResults
     
     
     //MARK:- UITableView Datasource/Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if currentDisplayMode == .suggestions {
+            return DataModelManager.shared.suggestionsList.count
+        }
+        return moviesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
 //        cell.textLabel?.text = "Movie"
         
+        if currentDisplayMode == .suggestions {
+
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SuggestionCell", for: indexPath)
+            let suggestion = DataModelManager.shared.suggestionsList[indexPath.row]
+            cell.textLabel?.text = suggestion
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
+        
+        let movie = moviesList[indexPath.row]
+        cell.lblName.text = movie.name
+        cell.lblReleaseDate.text = movie.releaseDate
+        cell.lblOverview.text = movie.overview
+        if movie.posterUrl != nil {
+            cell.imgViewPoster.af_setImage(withURL: URL(string: movie.posterUrl!)!)
+        }
+        
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if currentDisplayMode == .suggestions {
+            let suggestion = DataModelManager.shared.suggestionsList[indexPath.row]
+            searchBar.text = suggestion
+            searchBar.resignFirstResponder()
+            updateMoviesList(queryStr: suggestion)
+        }
     }
     
     
@@ -94,7 +164,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
-        
+        updateMoviesList(queryStr: searchBar.text!)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        currentDisplayMode = .suggestions
+        tableviewMovies.reloadData()
     }
     
     //MARK:- Lifecycle
@@ -103,6 +178,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableviewMovies.estimatedRowHeight = 228
+        tableviewMovies.rowHeight = UITableViewAutomaticDimension
+        tableviewMovies.tableFooterView = UIView()
         setupPullToRefresh()
     }
     

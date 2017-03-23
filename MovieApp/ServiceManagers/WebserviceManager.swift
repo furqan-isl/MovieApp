@@ -48,9 +48,6 @@ class WebserviceManager: NSObject {
             self.isConnectedToInternet = true
             //            self.processSignUpStep1()
             
-            self.getMoviesList(query: "batman", completionHandler: { (response: ResponseTuple) in
-                print(response)
-            })
         }
         reachability.whenUnreachable = { reachability in
             // this is called on a background thread, but UI updates must

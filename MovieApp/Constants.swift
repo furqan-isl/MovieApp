@@ -20,7 +20,7 @@ struct Constants {
     }
     
     struct UserDefaults {
-        static let SIGNUP_SELECTION_KEY = "SignUpSelectionKey"
+        static let SUGGESTIONS_KEY = "SuggestionsKey"
     }
     
 }

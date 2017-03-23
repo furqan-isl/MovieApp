@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "sendRequestWithParams(baseURL:params:webServiceName:requestMethod:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "sendRequestWithParams(baseURL:params:webServiceName:requestMethod:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "sendRequestWithParams(baseURL:params:webServiceName:requestMethod:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "sendRequestWithParams(baseURL:params:webServiceName:requestMethod:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ViewControllers/HomeViewController.swift"
-            timestampString = "511985507.791146"
+            timestampString = "511991257.21674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "updateMoviesList(queryStr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "getMoviesList(query:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986436.234602"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "sendRequestWithParams(baseURL:params:webServiceName:requestMethod:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ViewControllers/HomeViewController.swift"
-            timestampString = "511985558.957521"
+            timestampString = "511994500.830739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,12 +154,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511985881.962134"
+            timestampString = "511987623.756982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "configureInternetConnectivityCheck()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "getMoviesList(query:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ViewControllers/HomeViewController.swift"
+            timestampString = "511994144.15599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "showAlert(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +185,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieApp/ServiceManagers/WebserviceManager.swift"
-            timestampString = "511986252.235458"
+            filePath = "MovieApp/ViewControllers/HomeViewController.swift"
+            timestampString = "511994144.15599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getMoviesList(query:completionHandler:)"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "searchBarTextDidBeginEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ViewControllers/HomeViewController.swift"
+            timestampString = "511994144.15599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ViewControllers/HomeViewController.swift"
+            timestampString = "511994144.15599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/AppDelegate.swift"
+            timestampString = "511992445.254155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "applicationDidEnterBackground(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ServiceManagers/DataModelManager.swift"
+            timestampString = "511993042.324003"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "loadModelData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/ViewControllers/HomeViewController.swift"
+            timestampString = "511994144.15599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "updateMoviesList(queryStr:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
