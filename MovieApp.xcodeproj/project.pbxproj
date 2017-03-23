@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19B7C361E84320D00E93503 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B7C351E84320D00E93503 /* MovieTableViewCell.swift */; };
 		D1C0195D1E84286B0043D5BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0195C1E84286B0043D5BB /* AppDelegate.swift */; };
 		D1C019641E84286B0043D5BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C019631E84286B0043D5BB /* Assets.xcassets */; };
 		D1C019741E84295D0043D5BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C019731E84295D0043D5BB /* HomeViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D19B7C351E84320D00E93503 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D1C019591E84286B0043D5BB /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C0195C1E84286B0043D5BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C019631E84286B0043D5BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D19B7C341E8431E800E93503 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D19B7C351E84320D00E93503 /* MovieTableViewCell.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		D1C019501E84286B0043D5BB = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +64,10 @@
 		D1C0195B1E84286B0043D5BB /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1C0195C1E84286B0043D5BB /* AppDelegate.swift */,
 				D1C019751E8429710043D5BB /* Storyboards */,
 				D1C019721E84294D0043D5BB /* ViewControllers */,
-				D1C0195C1E84286B0043D5BB /* AppDelegate.swift */,
+				D19B7C341E8431E800E93503 /* UIComponents */,
 				D1C019631E84286B0043D5BB /* Assets.xcassets */,
 				D1C019681E84286B0043D5BB /* Info.plist */,
 			);
@@ -154,6 +165,7 @@
 			files = (
 				D1C0195D1E84286B0043D5BB /* AppDelegate.swift in Sources */,
 				D1C019741E84295D0043D5BB /* HomeViewController.swift in Sources */,
+				D19B7C361E84320D00E93503 /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +308,7 @@
 				D1C0196D1E84286B0043D5BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
