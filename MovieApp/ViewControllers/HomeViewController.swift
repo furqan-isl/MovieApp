@@ -20,13 +20,42 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var searchBar: UISearchBar!
     
     
+    var moviesList = [Movie]()
+    
+    var isDataUpdateRequire = true
     
     //MARK:- Private Methods
     
     func updateResults() {
-        
         refreshControl.endRefreshing()
+    }
+    
+    
+    func updateMoviesList(queryStr: String) {
         
+        WebserviceManager.shared.getMoviesList(query: queryStr) { [weak self] (responseTuple: ResponseTuple) in
+            
+            if responseTuple.success == true {
+                //Success
+                print("successfully get usate data")
+                let json = responseTuple.responseDictionary
+                print("json : \(json)")
+                if let results = json?["results"].array {
+                    if results.count > 0 {
+                        self?.moviesList.removeAll()
+                        for result in results {
+                            let movie = Movie(json: result)
+                            self?.moviesList.append(movie)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self?.tableviewMovies.reloadData()
+                        }
+                    }
+                }
+                
+            }
+        }
     }
     
     
@@ -80,7 +109,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableviewMovies.reloadData()
+//        if isDataUpdateRequire {
+//            updateMoviesList(queryStr: "batman")
+//            isDataUpdateRequire = false
+//        }
+        
+        
+//        tableviewMovies.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
